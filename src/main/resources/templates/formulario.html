@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Page Title </title>
+
+</head>
+
+
+<body>
+
+	<form method="post" action="/nba/salvar" th:object="${nba}" enctype="multipart/form-data">
+	
+	<input type="hidden" th:field="*{codigo}"/>
+		<br>Time:			<input type="text" th:field="*{time}"/> <br><br>
+		Conferência:	<input type="text" th:field="*{confe}"/> <br><br>
+		Titulos:		<input type="text" th:field="*{titulos}"/><br><br>
+		Data de Nascimento: <input id="data" type="text" th:field="*{dataNascimento}"> <br><br>
+		
+		<!--Imagem: <input type"file" name="imagem"><br><br> -->
+		
+		<input type="submit" value="Cadastrar"/>
+		
+	</form>
+	
+	
+	<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.mask.js"></script>
+	
+	<script type="text/javascript">
+		$(Document).ready(function(){
+			$('#data').mask('00/00/0000');
+		});
+	
+	</script>
+</body>
+
+</html>
